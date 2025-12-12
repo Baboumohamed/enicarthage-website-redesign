@@ -1,0 +1,358 @@
+$(document).ready(function () {
+
+    $('.lightbox-gallery img').click(function(e) {
+        e.preventDefault();
+
+
+        // Get image link and description
+        var src = $(this).attr("data-image-hd");
+
+
+        // Add data to lighbox
+
+        $(".lightbox img").attr('src', src);
+
+
+        // Show lightbox
+
+        $(".lightbox").fadeIn('fast');
+
+        $(".lightbox").click(function() {
+            $(".lightbox").fadeOut('fast');
+        });
+    });
+
+    $('.linkOrganigramme').click(function(e) {
+        e.preventDefault();
+
+
+        // Show lightbox
+
+        $(".modalOrganigramme").fadeIn('fast');
+
+        $(".modalOrganigramme").click(function() {
+            $(".modalOrganigramme").fadeOut('fast');
+        });
+
+
+    });
+
+
+
+    /*   // verification search
+       $(".rechercheForm").validate({
+           // Specify the validation rules
+           rules: {
+               searchValue: "required",
+           },
+           submitHandler: function(form) {
+               $('.resultSearch').fadeOut();
+               //  $(".loaderAttente").fadeIn(500);
+               $.ajax({
+                   url: form.action,
+                   type: form.method,
+                   data: $(form).serialize(),
+                   success: function(response) {
+                       $('.resultSearch').html(response);
+                       $(".SectionSearch ").addClass("SectionSearchResult");
+                       //  $(".loaderAttente").fadeOut(500);
+                       $('.resultSearch').fadeIn();
+                       $(".inputSearch").val('');
+
+                   }
+               });
+
+           }
+
+       });*/
+
+
+    $(".titleAnimate .animate").each(function (i) {
+        $(this).attr("style", "animation-delay:" + i * 100 + "ms");
+        if (i == $(".titleAnimate .animate").size() -1) {
+            $(".titleAnimate").addClass("play")
+        }
+    });
+
+
+    (function ($) {
+        $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+
+        $('.tab li a').click(function (g) {
+            var tab = $(this).closest('.tab'),
+                index = $(this).closest('li').index();
+
+            tab.find('ul.tabs > li').removeClass('current');
+            $(this).closest('li').addClass('current');
+
+            tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+            tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+
+            g.preventDefault();
+        });
+    })(jQuery);
+
+    $(".search").click(function() {
+
+        if ($(".SectionSearch").hasClass("SectionSearchResult"))
+        {
+            $(".SectionSearch").removeClass("SectionSearchResult");
+            $(".resultSearch").fadeOut(500);
+            $(".resultSearch").html("");
+            document.getElementById("formSearch").reset();
+
+        }
+
+        $("header").toggleClass("headerScroll");
+        $(".page").toggleClass("pageScroll");
+
+        $(".SectionSearch").toggleClass("SectionSearchBlock");
+        $(".search").toggleClass("searchBlock");
+
+    });
+
+
+    $(".inputNews").click(function() {
+
+        $(".open1").addClass("openBlock");
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+    });
+
+
+    $('.linkDrop').click(function() {
+        $('.dropmenu').hide();
+        $('.dropmenu').removeClass("dropmenuBlock");
+        $(this).find('.dropmenu').toggle(500);
+        $(this).find('.dropmenu').addClass("dropmenuBlock");
+    });
+
+    $("#pull").click(function() {
+
+        $(".menuMobile").toggleClass("menuMobileBlock");
+        $("#pull").toggleClass("pullActive");
+
+    });
+
+    $(".closeMenu").click(function() {
+
+        $(".menuMobile").removeClass("menuMobileBlock");
+        $("#pull").removeClass("pullActive");
+
+    });
+
+    $(".choixNews").click(function() {
+
+        if ($(this).val()==1 || $(this).val()==2)
+        {
+            $(".open2").addClass("openBlock");
+            $(".open2 .dep_choice").prop('disabled', false);
+        }
+        else
+        {
+            $(".open2").removeClass("openBlock");
+            $(".open2 .dep_choice").prop('disabled', true);
+        }
+    });
+
+
+
+    $(window).scroll(function() {
+
+
+
+        var wintop = $(this).scrollTop();
+
+        if ($(window).scrollTop() > 150) {
+            $('header').addClass('fixed');
+            $('.blockMenu').removeClass('openBlockMenu');
+
+        }
+        // else if (window.matchMedia('(min-width: 768px)').matches) {
+        else {
+            $('header').removeClass('fixed');
+            $('.blockMenu').removeClass('openBlockMenu');
+
+        }
+
+
+
+        $('.ligneAlaUne').each(function(){
+            if(wintop > $(this).offset().top - ($(window).height() / 1.3))
+                $(this).addClass("activesection");
+
+        });
+
+        $('.blobPartenaire').each(function(){
+            if(wintop > $(this).offset().top - ($(window).height() / 1.3))
+                $(this).addClass("activesection");
+
+        });
+
+        $('.blockFormation').each(function(){
+            if(wintop > $(this).offset().top - ($(window).height() / 1.3))
+                $(this).addClass("activesection");
+
+        });
+
+        $('.newslettreSection').each(function(){
+            if(wintop > $(this).offset().top - ($(window).height() / 1.6))
+                $(this).addClass("activesection");
+
+        });
+
+    });
+
+
+
+    new SmoothScroll();
+    function SmoothScroll(el) {
+        var t = this, h = document.documentElement;
+        el = el || window;
+        t.rAF = false;
+        t.target = 0;
+        t.scroll = 0;
+        t.animate = function() {
+            t.scroll += (t.target - t.scroll) * 0.1;
+            if (Math.abs(t.scroll.toFixed(5) - t.target) <= 0.47131) {
+                cancelAnimationFrame(t.rAF);
+                t.rAF = false;
+            }
+            if (el == window) scrollTo(0, t.scroll);
+            else el.scrollTop = t.scroll;
+            if (t.rAF) t.rAF = requestAnimationFrame(t.animate);
+        };
+        el.onmousewheel = function(e) {
+            e.stopPropagation();
+            var scrollEnd = (el == window) ? h.scrollHeight - h.clientHeight : el.scrollHeight - el.clientHeight;
+            t.target += (e.wheelDelta > 0) ? -70 : 70;
+            if (t.target < 0) t.target = 0;
+            if (t.target > scrollEnd) t.target = scrollEnd;
+            if (!t.rAF) t.rAF = requestAnimationFrame(t.animate);
+        };
+        el.onscroll = function() {
+            if (t.rAF) return;
+            t.target = (el == window) ? pageYOffset || h.scrollTop : el.scrollTop;
+            t.scroll = t.target;
+        };
+    }
+
+
+    // verification newslettre
+
+    // add the rule here
+    $.validator.addMethod("valueNotEquals", function(value, element, arg){
+        return arg !== value;
+    }, "Value must not equal arg.");
+
+    $("#formNewslettre").validate({
+        // Specify the validation rules
+        rules: {
+
+            email: {
+                required: true,
+                email: true
+
+            },
+
+            choixNews :{required: true},
+            dep_choice:{ valueNotEquals: "default" }
+
+        },
+
+        // Specify the validation error messages
+        messages: {
+
+            email: "L’adresse mail saisie n’est pas valide ",
+            choixNews :"Veuillez choisir votre profil.",
+            dep_choice:{ valueNotEquals: "Veuillez choisir un département." }
+        },
+
+        errorPlacement: function(error, element)
+        {
+            if ( element.is(":radio") )
+            {
+                error.appendTo( element.parents('.listeChoix') );
+            }
+            else
+            { // This is the default behavior
+                error.insertAfter( element );
+            }
+        },
+        submitHandler: function(form) {
+            $('#answers').fadeOut();
+            $.ajax({
+                url: form.action,
+                type: form.method,
+                data: $(form).serialize(),
+                success: function(response) {
+                    $('#answers').html(response);
+                    document.getElementById("formNewslettre").reset();
+                    $(".inputNews ").fadeOut(500);
+                    $(".open1").removeClass('openBlock');
+                    $(".open2").removeClass('openBlock');
+                    $('#answers').fadeIn(500);
+                }
+            });
+
+        }
+
+    });
+
+
+// verification contact
+
+    $("#formContact").validate({
+        // Specify the validation rules
+        rules: {
+            "mdweb_adminbundle_contact[name]":{required: true,},
+            "mdweb_adminbundle_contact[prename]":{required: true,},
+            "mdweb_adminbundle_contact[message]":{required: true,},
+            "mdweb_adminbundle_contact[email]": {
+                required: true,
+                email: true
+            },
+        },
+
+        // Specify the validation error messages
+        messages: {
+            "mdweb_adminbundle_contact[email]": "L’adresse mail saisie n’est pas valide ",
+            "mdweb_adminbundle_contact[prename]" :"veuillez renseigner ce champ",
+            "mdweb_adminbundle_contact[name]" :"veuillez renseigner ce champ",
+            "mdweb_adminbundle_contact[message]" :"veuillez saisir votre message"
+
+        },
+
+
+        submitHandler: function(form) {
+            $(".loaderAttente").fadeIn(500);
+            $.ajax({
+                url: form.action,
+                type: form.method,
+                dataType: 'JSON',
+                data: $(form).serialize(),
+                success: function(response) {
+                    if(response.rep==1) {
+                        document.getElementById("formContact").reset();
+                    }
+                    $('.ResultContact').html(response.msg);
+                    $(".loaderAttente").fadeOut(500);
+
+                }
+            });
+
+        }
+
+    });
+
+    $(function() {
+        $('.lazy').Lazy({
+            scrollDirection: 'vertical',
+            effect: 'fadeIn',
+            visibleOnly: true,
+            onError: function (element) {
+                console.log('error loading ' + element.data('src'));
+            }
+        });
+    });
+
+});
