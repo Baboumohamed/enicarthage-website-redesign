@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Quick Links",
+    "links": [
+      { "label": "About Us", "url": "/about" },
+      { "label": "Academics", "url": "/academics" },
+      { "label": "Admissions", "url": "/admissions" },
+      { "label": "News & Events", "url": "/news" }
+    ]
+  },
+  {
+    "title": "Resources",
+    "links": [
+      { "label": "Student Portal", "url": "#" },
+      { "label": "Library", "url": "#" },
+      { "label": "Career Services", "url": "#" },
+      { "label": "IT Support", "url": "#" }
+    ]
+  },
+  {
+    "title": "Departments",
+    "links": [
+      { "label": "Computer Science", "url": "/departments/informatique" },
+      { "label": "Electronics", "url": "/departments/electronique" },
+      { "label": "Mechanical Engineering", "url": "/departments/mecatronique" },
+      { "label": "Industrial Engineering", "url": "/departments/gsil" }
+    ]
+  },
+  {
+    "title": "Contact",
+    "links": [
+      { "label": "Contact Us", "url": "/contact" },
+      { "label": "Directions", "url": "#" },
+      { "label": "Feedback", "url": "#" }
+    ]
+  }
+]

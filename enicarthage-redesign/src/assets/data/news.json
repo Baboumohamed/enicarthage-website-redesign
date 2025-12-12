@@ -1,0 +1,68 @@
+[
+  {
+    "id": "news-001",
+    "title": "Consultation_07-2025 : Acquisition de Meuble",
+    "description": "Consultation 07/2025 pour l'acquisition de meubles au profit de l'école",
+    "content": "L'École Nationale d'Ingénieurs de Carthage lance une consultation pour l'acquisition de meubles. Les entreprises intéressées sont invitées à soumettre leurs offres.",
+    "category": "Consultation",
+    "image": "/assets/images/news-consultation.jpg",
+    "date": "2025-12-04",
+    "author": "Administration ENICarthage",
+    "featured": true
+  },
+  {
+    "id": "news-002",
+    "title": "Acquisition de fournitures et de composants électroniques pour l'enseignement",
+    "description": "Avis de prorogation du délai de demande de prix 27/2025",
+    "content": "L'ENICarthage annonce la prorogation du délai pour la demande de prix concernant l'acquisition de fournitures et de composants électroniques destinés à l'enseignement.",
+    "category": "Consultation",
+    "image": "/assets/images/news-electronics.jpg",
+    "date": "2025-12-03",
+    "author": "Administration ENICarthage",
+    "featured": true
+  },
+  {
+    "id": "news-003",
+    "title": "Acquisition des équipements au profit du laboratoire de recherche EITIC",
+    "description": "Consultation et Bordereaux des prix - Cahier des charges techniques",
+    "content": "Dans le cadre du développement de ses capacités de recherche, l'ENICarthage lance une consultation pour l'acquisition d'équipements au profit du laboratoire EITIC.",
+    "category": "Recherche",
+    "image": "/assets/images/news-lab.jpg",
+    "date": "2025-11-26",
+    "author": "Laboratoire EITIC",
+    "featured": true
+  },
+  {
+    "id": "news-004",
+    "title": "Forum des Entreprises de l'ENICarthage 2024",
+    "description": "Rencontre annuelle entre étudiants et professionnels du secteur",
+    "content": "Le Forum des Entreprises de l'ENICarthage est l'occasion idéale pour les étudiants de rencontrer les recruteurs et découvrir les opportunités de carrière.",
+    "category": "Événement",
+    "image": "/assets/images/news-forum.jpg",
+    "date": "2024-11-21",
+    "author": "Service Relations Entreprises",
+    "featured": false
+  },
+  {
+    "id": "news-005",
+    "title": "Journées d'intégration des nouveaux étudiants",
+    "description": "Du mardi 2 septembre au vendredi 5 septembre 2025",
+    "content": "L'ENICarthage organise les journées d'intégration pour accueillir les nouveaux étudiants et les familiariser avec l'environnement académique.",
+    "category": "Vie étudiante",
+    "image": "/assets/images/news-integration.jpg",
+    "date": "2025-09-02",
+    "author": "Direction des Études",
+    "featured": false
+  },
+  {
+    "id": "news-006",
+    "title": "The 15th IEEE International Conference on Security of Information and Networks",
+    "description": "Conférence internationale organisée à Sousse du 11 au 13 novembre 2022",
+    "content": "L'ENICarthage a participé à l'organisation de la 15ème édition de la conférence IEEE sur la sécurité de l'information et des réseaux.",
+    "category": "Recherche",
+    "image": "/assets/images/news-conference.jpg",
+    "date": "2022-11-11",
+    "author": "Département Recherche",
+    "featured": false
+  }
+]

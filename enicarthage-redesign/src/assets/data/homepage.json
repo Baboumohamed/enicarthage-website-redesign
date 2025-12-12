@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "title": "L'École Nationale d'Ingénieurs de Carthage",
+    "subtitle": "Former les ingénieurs de demain",
+    "slides": [
+      {
+        "title": "Bienvenue à l'ENICarthage",
+        "subtitle": "Excellence en formation d'ingénieurs",
+        "backgroundImage": "/assets/images/slide1.jpg"
+      },
+      {
+        "title": "Formations d'Excellence",
+        "subtitle": "Cycles Ingénieurs • Mastères • Doctorat",
+        "backgroundImage": "/assets/images/slide2.jpg"
+      },
+      {
+        "title": "Recherche et Innovation",
+        "subtitle": "Laboratoires de recherche de pointe",
+        "backgroundImage": "/assets/images/slide3.jpg"
+      },
+      {
+        "title": "Partenariats Industriels",
+        "subtitle": "Coopérations nationales et internationales",
+        "backgroundImage": "/assets/images/slide4.jpg"
+      }
+    ],
+    "ctaButtons": [
+      {
+        "label": "Découvrir nos formations",
+        "link": "/academics",
+        "variant": "primary"
+      },
+      {
+        "label": "En savoir plus",
+        "link": "/about",
+        "variant": "secondary"
+      }
+    ]
+  },
+  "featuredNews": 3,
+  "formations": [
+    {
+      "title": "Ingénieur GSIL",
+      "subtitle": "Génie des Systèmes Industriels et Logistiques",
+      "link": "/academics/gsil"
+    },
+    {
+      "title": "Ingénieur Mécatronique",
+      "subtitle": "Systèmes mécatroniques",
+      "link": "/academics/mecatronique"
+    },
+    {
+      "title": "Ingénieur Informatique",
+      "subtitle": "Génie Informatique",
+      "link": "/academics/informatique"
+    },
+    {
+      "title": "Ingénieur Infotronique",
+      "subtitle": "Informatique et Électronique",
+      "link": "/academics/infotronique"
+    },
+    {
+      "title": "Mastère ARTI",
+      "subtitle": "Automatique et Robotique Industrielle",
+      "link": "/academics/mastere-arti"
+    },
+    {
+      "title": "Mastère TIC",
+      "subtitle": "Technologies de l'Information et Communication",
+      "link": "/academics/mastere-tic"
+    },
+    {
+      "title": "Mastère MPSDM",
+      "subtitle": "Management des Projets",
+      "link": "/academics/mastere-mpsdm"
+    },
+    {
+      "title": "Doctorat",
+      "subtitle": "Formation doctorale",
+      "link": "/academics/doctorat"
+    }
+  ],
+  "recherche": [
+    {
+      "title": "Laboratoires",
+      "link": "/recherche/laboratoires"
+    },
+    {
+      "title": "Commission de thèse",
+      "link": "/recherche/commission-these"
+    },
+    {
+      "title": "Commission de mastère",
+      "link": "/recherche/commission-mastere"
+    },
+    {
+      "title": "Projets",
+      "link": "/recherche/projets"
+    }
+  ],
+  "cooperations": [
+    {
+      "title": "Coopérations Académiques",
+      "link": "/opportunites/conventions#ca"
+    },
+    {
+      "title": "Coopérations de Certification",
+      "link": "/opportunites/conventions#cc"
+    },
+    {
+      "title": "Coopérations avec l'industrie",
+      "link": "/opportunites/conventions#ci"
+    },
+    {
+      "title": "Coopérations avec des associations",
+      "link": "/opportunites/conventions#cas"
+    }
+  ],
+  "quickLinks": [
+    {
+      "title": "Formations",
+      "description": "Découvrez nos programmes d'ingénierie",
+      "icon": "GraduationCap",
+      "link": "/academics"
+    },
+    {
+      "title": "Agenda",
+      "description": "Événements à venir",
+      "icon": "Calendar",
+      "link": "/events"
+    },
+    {
+      "title": "Actualités",
+      "description": "Dernières nouvelles",
+      "icon": "Newspaper",
+      "link": "/news"
+    },
+    {
+      "title": "Contact",
+      "description": "Nous contacter",
+      "icon": "Mail",
+      "link": "/contact"
+    }
+  ],
+  "partners": [
+    { "name": "UVT", "logo": "uvt.jpg", "link": "http://www.uvt.rnu.tn/" },
+    { "name": "IBM", "logo": "ibm.jpg", "link": "http://www.ibm.com/tn-fr" },
+    { "name": "SOFRECOM", "logo": "sofrecom.jpg", "link": "http://www.sofrecom.com/fr" },
+    { "name": "Orange", "logo": "orange.jpg", "link": "http://www.orange.tn/" },
+    { "name": "Microsoft", "logo": "microsoft.jpg", "link": "http://www.microsoft.com/fr-tn" },
+    { "name": "STEG", "logo": "steg.jpg", "link": "http://www.steg.com.tn/" },
+    { "name": "ATI", "logo": "ati.jpg", "link": "http://www.ati.tn/" },
+    { "name": "LPI", "logo": "lpi.jpg", "link": "http://www.lpi.org/" }
+  ],
+  "statistics": [
+    {
+      "label": "Étudiants",
+      "value": "2500+",
+      "icon": "Users"
+    },
+    {
+      "label": "Enseignants",
+      "value": "150+",
+      "icon": "GraduationCap"
+    },
+    {
+      "label": "Formations",
+      "value": "8",
+      "icon": "BookOpen"
+    },
+    {
+      "label": "Années d'excellence",
+      "value": "20+",
+      "icon": "Award"
+    }
+  ]
+}

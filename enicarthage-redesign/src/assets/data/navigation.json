@@ -1,0 +1,54 @@
+[
+  {
+    "label": "Home",
+    "path": "/"
+  },
+  {
+    "label": "About",
+    "path": "/about"
+  },
+  {
+    "label": "Academics",
+    "path": "/academics",
+    "children": [
+      {
+        "label": "Departments",
+        "path": "/departments"
+      },
+      {
+        "label": "Programs",
+        "path": "/programs"
+      },
+      {
+        "label": "Admissions",
+        "path": "/admissions"
+      }
+    ]
+  },
+  {
+    "label": "News & Events",
+    "path": "/news",
+    "children": [
+      {
+        "label": "News",
+        "path": "/news"
+      },
+      {
+        "label": "Events",
+        "path": "/events"
+      },
+      {
+        "label": "Calendar",
+        "path": "/calendar"
+      }
+    ]
+  },
+  {
+    "label": "Services",
+    "path": "/services"
+  },
+  {
+    "label": "Contact",
+    "path": "/contact"
+  }
+]

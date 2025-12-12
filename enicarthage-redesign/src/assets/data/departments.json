@@ -1,0 +1,78 @@
+[
+  {
+    "id": "dept-001",
+    "name": "Computer Science and Software Engineering",
+    "shortName": "Informatique",
+    "description": "Specializing in software development, AI, and system design",
+    "image": "/assets/images/dept-informatique.jpg",
+    "icon": "Code",
+    "foundedYear": 2000,
+    "headOfDepartment": "Dr. Tarek Habib",
+    "studentCount": 600,
+    "facultyCount": 40,
+    "specializations": [
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Database Systems",
+      "Cybersecurity"
+    ],
+    "slug": "informatique"
+  },
+  {
+    "id": "dept-002",
+    "name": "Electronics and Microelectronics Engineering",
+    "shortName": "Électronique",
+    "description": "Advanced electronics, embedded systems, and semiconductor technology",
+    "image": "/assets/images/dept-electronique.jpg",
+    "icon": "Zap",
+    "foundedYear": 1995,
+    "headOfDepartment": "Dr. Khaled Saidi",
+    "studentCount": 480,
+    "facultyCount": 35,
+    "specializations": [
+      "Digital Electronics",
+      "Analog Circuit Design",
+      "Embedded Systems",
+      "Microwave Engineering"
+    ],
+    "slug": "electronique"
+  },
+  {
+    "id": "dept-003",
+    "name": "Mechanical Engineering",
+    "shortName": "Mécatronique",
+    "description": "Mechanical design, thermodynamics, and robotics",
+    "image": "/assets/images/dept-mecatronique.jpg",
+    "icon": "Wrench",
+    "foundedYear": 1998,
+    "headOfDepartment": "Dr. Mohamed Ezzine",
+    "studentCount": 520,
+    "facultyCount": 38,
+    "specializations": [
+      "Machine Design",
+      "Thermal Systems",
+      "Robotics",
+      "Fluid Mechanics"
+    ],
+    "slug": "mecatronique"
+  },
+  {
+    "id": "dept-004",
+    "name": "Industrial Engineering and Management",
+    "shortName": "GSIL",
+    "description": "Systems engineering, operations management, and process optimization",
+    "image": "/assets/images/dept-gsil.jpg",
+    "icon": "Factory",
+    "foundedYear": 2003,
+    "headOfDepartment": "Dr. Samia Jaziri",
+    "studentCount": 400,
+    "facultyCount": 28,
+    "specializations": [
+      "Production Management",
+      "Supply Chain",
+      "Quality Assurance",
+      "Systems Analysis"
+    ],
+    "slug": "gsil"
+  }
+]

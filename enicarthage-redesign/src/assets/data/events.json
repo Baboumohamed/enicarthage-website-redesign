@@ -1,0 +1,110 @@
+[
+  {
+    "id": "event-001",
+    "title": "Journées d'intégration du mardi 2 septembre au vendredi 5 septembre",
+    "description": "Accueil des nouveaux étudiants et présentation de l'école",
+    "date": "2025-09-02",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "Bâtiment Annexe de l'ENICarthage",
+    "image": "/assets/images/event-integration.jpg",
+    "category": "academic",
+    "isFeatured": true
+  },
+  {
+    "id": "event-002",
+    "title": "Forum des Entreprises de l'ENICarthage 2024",
+    "description": "Rencontre entreprises-étudiants pour opportunités de stage et d'emploi",
+    "date": "2024-11-21",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "UTICA",
+    "image": "/assets/images/event-forum.jpg",
+    "category": "career",
+    "isFeatured": true
+  },
+  {
+    "id": "event-003",
+    "title": "The 15th IEEE International Conference on Security of Information and Networks",
+    "description": "Conférence internationale sur la sécurité informatique",
+    "date": "2022-11-11",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "location": "Tunisie - Sousse du 11 au 13 novembre 2022",
+    "image": "/assets/images/event-ieee.jpg",
+    "category": "conference",
+    "isFeatured": true
+  },
+  {
+    "id": "event-004",
+    "title": "Journées d'intégration et célébration des 20 ans de l'ENICarthage",
+    "description": "Événement spécial célébrant les 20 ans d'excellence de l'école",
+    "date": "2022-09-05",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "Campus ENICarthage",
+    "image": "/assets/images/event-20ans.jpg",
+    "category": "celebration",
+    "isFeatured": false
+  },
+  {
+    "id": "event-005",
+    "title": "ITSIS Conférence",
+    "description": "Conférence internationale sur les systèmes d'information",
+    "date": "2022-07-15",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "ENICarthage",
+    "image": "/assets/images/event-itsis.jpg",
+    "category": "conference",
+    "isFeatured": false
+  },
+  {
+    "id": "event-006",
+    "title": "Première journée sur l'énergie éolienne en Tunisie",
+    "description": "Journée thématique sur les énergies renouvelables",
+    "date": "2020-03-11",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "ENICarthage",
+    "image": "/assets/images/event-energie.jpg",
+    "category": "seminar",
+    "isFeatured": false
+  },
+  {
+    "id": "event-007",
+    "title": "ALL JAPAN ROBOT SUMO TOURNAMENT",
+    "description": "Compétition internationale de robots sumo",
+    "date": "2019-12-14",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "location": "Japon",
+    "image": "/assets/images/event-robot.jpg",
+    "category": "competition",
+    "isFeatured": false
+  },
+  {
+    "id": "event-008",
+    "title": "ENICarthage Robots 5.0",
+    "description": "5ème édition de la compétition robotique de l'ENICarthage",
+    "date": "2019-12-08",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "ENICarthage",
+    "image": "/assets/images/event-robots.jpg",
+    "category": "competition",
+    "isFeatured": false
+  },
+  {
+    "id": "event-009",
+    "title": "Carthage Hackathon",
+    "description": "Marathon de programmation et d'innovation",
+    "date": "2019-04-27",
+    "startTime": "08:00",
+    "endTime": "20:00",
+    "location": "ENICarthage",
+    "image": "/assets/images/event-hackathon.jpg",
+    "category": "competition",
+    "isFeatured": false
+  }
+]

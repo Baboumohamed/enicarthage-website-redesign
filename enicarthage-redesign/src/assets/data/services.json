@@ -1,0 +1,58 @@
+[
+  {
+    "id": "service-001",
+    "name": "Student Portal",
+    "description": "Access to grades, schedules, and academic records",
+    "icon": "BookOpen",
+    "category": "Academic"
+  },
+  {
+    "id": "service-002",
+    "name": "Library Services",
+    "description": "Digital and physical library resources",
+    "icon": "Library",
+    "category": "Resources"
+  },
+  {
+    "id": "service-003",
+    "name": "Career Services",
+    "description": "Job placement and career counseling",
+    "icon": "Briefcase",
+    "category": "Career"
+  },
+  {
+    "id": "service-004",
+    "name": "Student Health Center",
+    "description": "Medical and wellness services",
+    "icon": "Heart",
+    "category": "Health"
+  },
+  {
+    "id": "service-005",
+    "name": "IT Support",
+    "description": "Technical assistance and network support",
+    "icon": "Monitor",
+    "category": "IT"
+  },
+  {
+    "id": "service-006",
+    "name": "Accommodation",
+    "description": "On-campus housing for students",
+    "icon": "Home",
+    "category": "Housing"
+  },
+  {
+    "id": "service-007",
+    "name": "International Office",
+    "description": "Exchange programs and international partnerships",
+    "icon": "Globe",
+    "category": "International"
+  },
+  {
+    "id": "service-008",
+    "name": "Counseling Center",
+    "description": "Academic and personal counseling",
+    "icon": "Users",
+    "category": "Support"
+  }
+]

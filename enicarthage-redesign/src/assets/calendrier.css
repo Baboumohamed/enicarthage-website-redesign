@@ -1,0 +1,125 @@
+#my-calendar {
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  max-width: 430px;
+  margin: 0 auto;
+}
+#my-calendar .calendar-event {
+  position: absolute;
+  z-index: 30;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .3s;
+  background: #1b70b6;
+}
+#my-calendar .calendar-event.show {
+  top: 0;
+}
+.card-header{display:flex;align-items:center;justify-content:space-between;padding:10px;color:#fff}
+.text-muted {
+  color: #fff;
+  font-weight: 300;
+}
+.list-unstyled li{padding: 5px 10px;border-bottom:1px solid rgba(255, 255, 255, 0.52);font-weight: 600;color: #fff;}
+#my-calendar .calendar-event .card-body {
+  overflow: hidden;
+  height: 100%;
+}
+#my-calendar .calendar-event .card-body ul{
+  overflow: scroll;
+  height: 100%;
+}
+#my-calendar .calendar-event .close-btn {
+  cursor: pointer;
+}
+#my-calendar .clndr-controls {
+  display: flex;
+  min-height: 45px;
+  align-items: center;
+  padding: 25px 0px;
+}
+#my-calendar .clndr-controls .month {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+#my-calendar .clndr-control-button {
+  display: flex;
+  align-self: stretch;
+  width: calc(100% / 7);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+#my-calendar .clndr-control-button::before {
+  content: '\f104';
+  font-family: 'fontawesome';
+  color: #fff;
+}
+#my-calendar .clndr-control-button:last-child {
+  border-right: 0;
+}
+#my-calendar .clndr-control-button:last-child::before {
+  content: '\f105';
+}
+#my-calendar .clndr-previous-button, #my-calendar .clndr-next-button {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  color: #fff;
+}
+#my-calendar .clndr-table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  border: none;
+}
+#my-calendar .clndr-table .header-day {
+  font-weight: bold;
+  font-size: 13px;
+  height: 40px;
+  border: 0px;
+  color: #fff;
+}
+#my-calendar .clndr-table .day {
+  vertical-align: middle;
+  height: 45px;
+  border: 0px;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 1px;
+}
+#my-calendar .clndr-table .day.event > .day-contents {
+  background-color: #1e73be;
+  color: #fff;
+  border-radius: 50%;
+  line-height: 40px;
+}
+#my-calendar .clndr-table .day.today .day-contents {
+  background-color: rgba(27, 112, 182, 0.35);
+}
+#my-calendar .clndr-table .day-contents {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  line-height: 40px;
+  border-radius: 50%;
+}
+#my-calendar .clndr-table .last-month,
+#my-calendar .clndr-table .next-month {
+  opacity: 0;
+}

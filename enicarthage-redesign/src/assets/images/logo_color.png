@@ -1,0 +1,495 @@
+﻿<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <title> Erreur 404</title>
+    <meta charset="utf-8">
+ <meta name="google-site-verification" content="sItU5Ekk-BunCkJUkeRR1sUY2O-ex86xeAHZ8OPHAH0" />   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="description" content="L&#039;Ecole Nationale d’Ingénieurs de Carthage (ENICarthage) est un établissement d’enseignement supérieur publique, relevant de l&#039;Université de Carthage.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ENICarthage">
+    <meta property="og:url" content="http://www.enicarthage.rnu.tn">
+    <meta property="og:image" content="http://www.enicarthage.rnu.tn/bundles/mdwebfront/images/logo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bundles/mdwebfront/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bundles/mdwebfront/css/slick.css">
+    <link rel="stylesheet"  href="/bundles/mdwebfront/css/slick-theme.css">
+    <link rel="stylesheet"  href="/bundles/mdwebfront/css/calendrier.css">
+    <link rel="stylesheet" href="/bundles/mdwebfront/css/style.css">
+    <script src="/bundles/mdwebfront/js/jquery.min.js"></script>
+    </head>
+
+<body class="">
+
+
+<div class="menuMobile">
+    <div>
+
+        <a  class="closeMenu"><img src="/bundles/mdwebfront/images/close.png" alt="EniCarthage"></a>
+        <div class="formsearch">
+            <div class="col-xs-12 ">
+                <div class="col-xs-12 ">
+    <form name="form" method="post" action="/fr/search/searchForm">
+    <input type="text" id="form_searchValue" name="form[searchValue]" required="required" class="input inputSearch" oninvalid="this.setCustomValidity(&#039;Veuillez compléter ce champ&#039;)" oninput="this.setCustomValidity(&#039;&#039;)" placeholder="Recherche....." />
+    <div><button type="submit" id="form_save" name="form[save]" class="btnsearch">Aller</button></div><input type="hidden" id="form__token" name="form[_token]" value="t7WlLFHbrr-fvWMHR-9-GpRD31lbB2kYI6iGXSi6QIA" />
+    </form>
+</div>
+<div class="three col loaderAttente" style="display: none">
+    <div class="loader" id="loader-1">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<div class="resultSearch col-xs-12">
+
+</div>
+
+            </div>
+            <div class="three col loaderAttente" style="display: none">
+                <div class="loader" id="loader-2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="resultSearch col-xs-12">
+
+            </div>
+        </div>
+
+        <ul class="BlockMenu">
+
+            <li><a href="/"><span>Accueil</span></a></li>
+            <li class="linkDrop"><a href="#" class="droplink"><span>École  </span></a>
+                <div class="dropmenu">
+                    <div>
+                        <ul>
+                            <li><a href="/fr/ecole/apropos">À propos</a></li>
+                            <li><a href="/fr/ecole/organiramme">Organigramme</a></li>
+                            <li><a href="/fr/ecole/">Équipe enseignante</a></li>
+                            <li><a href="/fr/ecole/club">Clubs de l’école</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </li>
+            <li><a href="/fr/actualite"><span>Actualités</span></a></li>
+
+            <li class="linkDrop">
+                <a href="#" class="droplink"><span>formations</span></a>
+                <div class="dropmenu ">
+                    <div>
+                        <ul>
+                            <li><a href="#">Départements</a></li>
+                                                            <li><a href="/fr/formations/departements/genie-informatique/1">Génie Informatique</a></li>
+                                                            <li><a href="/fr/formations/departements/genie-electrique/2">Génie électrique</a></li>
+                                                            <li><a href="/fr/formations/departements/genie-industriel/4">Génie industriel</a></li>
+                                                    </ul>
+                        <ul>
+                            <li><a href="#">Cycles ingénieurs</a></li>
+                                                            <li><a href="/fr/formations/cycles/gsil/2">GSIL</a></li>
+                                                            <li><a href="/fr/formations/cycles/mecatronique/4">Mécatronique</a></li>
+                                                            <li><a href="/fr/formations/cycles/informatique/5">Informatique</a></li>
+                                                            <li><a href="/fr/formations/cycles/infotronique/11">Infotronique</a></li>
+                                                    </ul>
+                        <ul>
+                            <li><a href="#">Mastéres</a></li>
+                                                            <li><a href="/fr/formations/masteres/arti/1">ARTI</a></li>
+                                                            <li><a href="/fr/formations/masteres/tic/6">TIC</a></li>
+                                                            <li><a href="/fr/formations/masteres/mpsdm/7">MPSDM</a></li>
+                                                    </ul>
+                        <ul>
+                            <li><a href="/fr/recherche/doctorat">Doctorat</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </li>
+            <li class="linkDrop"><a href="#" class="droplink"><span>Recherche</span></a>
+
+
+                <div class="dropmenu">
+                    <div>
+                        <ul>
+
+                            <li><a href="/fr/recherche/Laboratoires">Laboratoires</a> </li>
+                            <li><a href="/fr/recherche/Commission_these">Commission de thèse</a> </li>
+                            <li><a href="/fr/recherche/Commission_mastere">Commission de mastéres</a> </li>
+                            <li><a href="/fr/recherche/Projets">Projets</a> </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="linkDrop"><a href="#" class="droplink"><span>Opportunités</span></a>
+
+                <div class="dropmenu">
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="/fr/opportunites/stageetemplois">Emploi et Stages</a>
+                            </li>
+                            <li>
+                                <a href="/fr/opportunites/bourse">Bourses</a>
+                            </li>
+                            <li><a href="/fr/opportunites/conventions">Coopérations</a></li>
+                            <li>  <a href="/fr/opportunites/centre4c">Centre 4C</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </li>
+            <li><a href="/fr/dates">Agenda</a></li>
+            <li><a href="/fr/contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<div class="SectionSearch hidden-sm hidden-xs">
+    <div class="formsearch">
+        <div class="col-xs-12 ">
+    <form name="form" method="post" action="/fr/search/searchForm">
+    <input type="text" id="form_searchValue" name="form[searchValue]" required="required" class="input inputSearch" oninvalid="this.setCustomValidity(&#039;Veuillez compléter ce champ&#039;)" oninput="this.setCustomValidity(&#039;&#039;)" placeholder="Recherche....." />
+    <div><button type="submit" id="form_save" name="form[save]" class="btnsearch">Aller</button></div><input type="hidden" id="form__token" name="form[_token]" value="t7WlLFHbrr-fvWMHR-9-GpRD31lbB2kYI6iGXSi6QIA" />
+    </form>
+</div>
+<div class="three col loaderAttente" style="display: none">
+    <div class="loader" id="loader-1">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<div class="resultSearch col-xs-12">
+
+</div>
+
+    </div>
+</div>
+
+<header>
+    <div class="topmenu">
+        <ul>
+            <li><a href="/fr/docs">Documents</a></li>
+            <li><a href="/fr/dates">Agenda</a></li>
+            <li><a href="/fr/contact">Contact</a></li>
+            <li class="topSociau">
+                <a href="https://www.facebook.com/Ecole-Nationale-dIng%C3%A9nieurs-de-Carthage-ENICarthage-532762086862252/?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            </li>
+            <li class="liSearch"><a href="#" class="search"><img src="/assets/images/search.png"
+                                                                 alt="EniCarthage"></a></li>
+                            <li><a href="/fr/change">EN</a></li>
+                    </ul>
+    </div>
+
+    <div class="header">
+        <div class="logo  col-xs-12 col-sm-3">
+            <a href="/"><img src="/assets/images/logo.png" alt="EniCarthage"></a>
+        </div>
+        <div class="blockMenu col-xs-12 col-sm-9">
+
+            <div class="menu">
+                <ul>
+                    <li><a href="/"><span>Accueil</span></a></li>
+                    <li><a href="/fr/actualite"><span>Actualités</span></a></li>
+                    <li class="droplink"><a href="#" ><span>École</span></a>
+                        <div class="sousmenu">
+                            <div>
+                                <ul>
+                                    <li><a href="/fr/ecole/apropos">À propos</a></li>
+                                    <li><a href="/fr/ecole/organiramme">Organigramme</a></li>
+                                    <li><a href="/fr/ecole/">Équipe enseignante</a></li>
+                                    <li><a href="/fr/ecole/club">Clubs de l’école</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="droplink">
+                        <a href="#" ><span>formations</span></a>
+                        <div class="sousmenu sousmenuFormation">
+                            <div>
+                                <ul>
+                                    <li><a href="#">Cycles ingénieurs</a></li>
+                                                                            <li>
+                                            <a href="/fr/formations/cycles/gsil/2">GSIL</a>
+                                        </li>
+                                                                            <li>
+                                            <a href="/fr/formations/cycles/mecatronique/4">Mécatronique</a>
+                                        </li>
+                                                                            <li>
+                                            <a href="/fr/formations/cycles/informatique/5">Informatique</a>
+                                        </li>
+                                                                            <li>
+                                            <a href="/fr/formations/cycles/infotronique/11">Infotronique</a>
+                                        </li>
+                                                                    </ul>
+                                <ul>
+                                    <li><a href="#">Mastéres</a></li>
+                                                                            <li>
+                                            <a href=" /fr/formations/masteres/arti/1">ARTI</a>
+                                        </li>
+                                                                            <li>
+                                            <a href=" /fr/formations/masteres/tic/6">TIC</a>
+                                        </li>
+                                                                            <li>
+                                            <a href=" /fr/formations/masteres/mpsdm/7">MPSDM</a>
+                                        </li>
+                                                                    </ul>
+                                <ul>
+                                    <li><a href="/fr/recherche/doctorat">Doctorat</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Départements</a></li>
+                                                                            <li>
+                                            <a href="/fr/formations/departements/genie-informatique/1">Génie Informatique</a>
+                                        </li>
+                                                                            <li>
+                                            <a href="/fr/formations/departements/genie-electrique/2">Génie électrique</a>
+                                        </li>
+                                                                            <li>
+                                            <a href="/fr/formations/departements/genie-industriel/4">Génie industriel</a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="droplink"><a href="#" ><span>Recherche</span></a>
+
+
+                        <div class="sousmenu">
+                            <div>
+                                <ul>
+
+                                    <li><a href="/fr/recherche/Laboratoires">Laboratoires</a> </li>
+                                    <li><a href="/fr/recherche/Commission_these">Commission de thèse</a> </li>
+                                    <li><a href="/fr/recherche/Commission_mastere">Commission de mastère</a> </li>
+                                    <li><a href="/fr/recherche/Projets">Projets</a> </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="droplink"><a href="#" ><span>Opportunités</span></a>
+
+                        <div class="sousmenu">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <a href="/fr/opportunites/stageetemplois">Emploi et Stages</a>
+                                    </li>
+                                    <li>
+                                        <a href="/fr/opportunites/bourse">Bourses</a>
+                                    </li>
+                                    <li><a href="/fr/opportunites/conventions">Coopérations</a></li>
+                                    <li>  <a href="/fr/opportunites/centre4c">Centre 4C</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a id="pull"><span></span><em>Menu</em></a>
+</header>
+
+
+<div class="page">
+
+
+    
+    <section class="imgPage">
+        <img class="lazy" data-src="/bundles/mdwebfront/images/genieInformatique.jpg" alt="EniCarthage"/>
+        <div class="titlePage">
+            <h2 class="titleAnimate">
+                <span>
+                    <span class="animate"> Erreur </span>
+                    <span class="animate">404</span>
+               </span>
+            </h2>
+        </div>
+    </section>
+
+    <div class="pathway">
+        <div class="internePathway">
+            <a href="/">Accueil</a>
+            <a href="#">Erreur 404 </a>
+
+        </div>
+    </div>
+
+
+    <div class="notfound">
+        <img class="lazy" data-src="/bundles/mdwebfront/images/notfound-fr.jpg" alt="EniCarthage"/>
+        <a href="/" class="btnRetour"><span>Retourner à l&#039;accueil</span></a>
+    </div>
+
+
+
+        <section class="newslettreSection">
+    <div class="newslettreSectionInterne" id="newslettreSectionInterne">
+        <h2>S&#039;inscrire à la Newsletter</h2>
+        <div id="answers" style="display: none"></div>
+        <form class="formNewslettre" method="post" action="/newsletter" id="formNewslettre" >
+            <input type="email" name="email" class="input inputNews" placeholder="Taper votre email ici" required>
+
+            <div class="open1">
+                <div>
+                    <span class="titlebloc">Êtes-vous : </span>
+                    <div class="listeChoix">
+                        <div>
+                            <div class="colschoix"><input type="radio" value="1" class="choixNews"
+                                                          name="choixNews" id="choix1"><label for="choix1">Etudiant</label>
+                            </div>
+                            <div class="colschoix"><input type="radio" value="2" class="choixNews"
+                                                          name="choixNews" id="choix2"><label for="choix2">Enseignant</label>
+                            </div>
+                            <div class="colschoix"><input type="radio" value="3" class="choixNews"
+                                                          name="choixNews" id="choix3"><label for="choix3">Administration</label>
+                            </div>
+                            <div class="colschoix"><input type="radio" value="4" class="choixNews"
+                                                          name="choixNews" id="choix4"><label for="choix4">Autre</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="open2">
+                <div class="listedepartementNews">
+                    <select name="dep_choice" required class="dep_choice" disabled>
+                        <option selected value="default">Choisissez un département</option>
+                                                    <option value="1">Génie Informatique</option>
+                                                    <option value="2">Génie électrique</option>
+                                                    <option value="4">Génie industriel</option>
+                                            </select>
+                </div>
+            </div>
+            <input type="hidden" id="form__token" name="form[_token]" value="t7WlLFHbrr-fvWMHR-9-GpRD31lbB2kYI6iGXSi6QIA" />
+    
+                    <button type="submit" class="btnNews" ><span>S&#039;abonner</span></button>
+        </form>
+    </div>
+    </section>
+
+
+
+
+        </div>
+
+        <footer>
+
+    <div class="footer">
+
+        <div class="hidden-xs col-sm-6 col-md-2">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="#">École   </a></li>
+                <li><a href="/fr/ecole/apropos" class="minTitle">À propos</a></li>
+                <li><a href="#" class="minTitle">Organigramme</a></li>
+                <li><a href="/fr/ecole/" class="minTitle">Équipe enseignante</a></li>
+                <li><a href="/fr/ecole/club" class="minTitle">Clubs de l’école</a></li>
+                <li><a href="/fr/actualite">Actualités</a></li>
+                <li><a href="/fr/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="hidden-xs col-sm-6 col-md-2">
+            <ul>
+                <li><a href="#">formations</a></li>
+
+                <li><a href="#" class="minTitle">Cycles ingénieurs</a></li>
+                                    <li><a href="/fr/formations/cycles/gsil/2"
+                           class="mintext">GSIL</a></li>
+                                    <li><a href="/fr/formations/cycles/mecatronique/4"
+                           class="mintext">Mécatronique</a></li>
+                                    <li><a href="/fr/formations/cycles/informatique/5"
+                           class="mintext">Informatique</a></li>
+                                    <li><a href="/fr/formations/cycles/infotronique/11"
+                           class="mintext">Infotronique</a></li>
+                                <li><a href="#" class="minTitle">Mastéres</a></li>
+                                    <li>
+                        <a href=" /fr/formations/masteres/arti/1" class="mintext">ARTI</a>
+                    </li>
+                                    <li>
+                        <a href=" /fr/formations/masteres/tic/6" class="mintext">TIC</a>
+                    </li>
+                                    <li>
+                        <a href=" /fr/formations/masteres/mpsdm/7" class="mintext">MPSDM</a>
+                    </li>
+                                <li><a href="/fr/recherche/doctorat" class="minTitle">Doctorat</a></li>
+                <li><a href="#" class="minTitle">Départements</a></li>
+                                    <li><a href="/fr/formations/departements/genie-informatique/1"
+                           class="mintext">Génie Informatique</a></li>
+                                    <li><a href="/fr/formations/departements/genie-electrique/2"
+                           class="mintext">Génie électrique</a></li>
+                                    <li><a href="/fr/formations/departements/genie-industriel/4"
+                           class="mintext">Génie industriel</a></li>
+                            </ul>
+        </div>
+
+        <div class="hidden-xs col-sm-6 col-md-2">
+            <ul>
+                <li><a href="#"> Recherche</a></li>
+                <li><a href="/fr/recherche/Laboratoires" class="mintext">Laboratoires</a> </li>
+                <li><a href="/fr/recherche/Commission_these" class="mintext">Commission de thèse</a> </li>
+                <li><a href="/fr/recherche/Commission_mastere" class="mintext">Commission de mastère</a> </li>
+                <li><a href="/fr/recherche/Projets" class="mintext">Projets</a> </li>
+
+
+            </ul>
+        </div>
+        <div class="hidden-xs col-sm-6 col-md-2">
+            <ul>
+                <li><a href="#">Opportunités</a></li>
+                <li><a href="/fr/opportunites/stageetemplois"
+                       class="mintext"> Emploi et Stages</a></li>
+                <li><a href="/fr/opportunites/bourse"
+                       class="mintext"> Bourses</a></li>
+                <li><a href="/fr/opportunites/conventions" class="mintext"> Coopérations</a></li>
+                <li>  <a href="/fr/opportunites/centre4c" class="mintext">Centre 4C</a></li>
+                <li><a href="/fr/dates">Agenda</a></li>
+                <li><a href="/fr/contact">Contact</a></li>
+            </ul>
+
+        </div>
+        <div class=" col-sm-6 col-md-3">
+
+            <span class="contact">NOUS CONTACTER</span>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> 45 Rue des Entrepreneurs 2035 Charguia II Tunis- Carthage-Tunisie</p>
+            <p><i class="fa fa-mobile" aria-hidden="true"></i>( +216 ) 71 940 699 /  ( +216 ) 71 940 775</p>
+            <p><i class="fa fa-fax" aria-hidden="true"></i>( +216 ) 71 941 579</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i><span class="cryptedmail" data-name="enicarthage" data-domain="enicarthage" data-tld="rnu.tn"></span></p>
+
+        </div>
+
+
+        <div class="col-xs-12 blockSociau">
+            <a href="https://www.facebook.com/Ecole-Nationale-dIng%C3%A9nieurs-de-Carthage-ENICarthage-532762086862252/?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            <p class="copyright">Powered by <img class="lazy" src="/bundles/mdwebfront/images/mdweb.png" alt="EniCarthage"></p>
+        </div>
+
+    </div>
+
+
+</footer>
+
+
+    
+<script src="/bundles/mdwebfront/js/jquery.validate.min.js"></script>
+<script src="/assets/js/jquery.lazy.min.js"></script>
+<script src="/assets/js/jquery.lazy.plugins.min.js"></script>
+    <script src="/bundles/mdwebfront/js/mainEnicarthage.js"></script>
+    </body>
+</html>
