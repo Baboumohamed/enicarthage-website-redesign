@@ -142,7 +142,7 @@ import { RouterLink } from '@angular/router';
 
             <!-- Copyright -->
             <p class="text-sm text-gray-500 text-center">
-              &copy; {{ currentYear }} ENICarthage - École Nationale d'Ingénieurs de Carthage. Tous droits réservés.
+              &copy; {{ currentYear }} ENICarthage - mohamed BABBOU & dhia ABIDI. Tous droits réservés.
             </p>
           </div>
         </div>

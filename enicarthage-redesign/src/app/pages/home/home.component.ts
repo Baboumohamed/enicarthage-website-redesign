@@ -6,33 +6,33 @@ import { DataService } from '../../services/data.service';
 declare const AOS: any;
 
 interface SlideData {
-    title: string;
-    subtitle: string;
-    backgroundImage: string;
+  title: string;
+  subtitle: string;
+  backgroundImage: string;
 }
 
 interface NewsItem {
-    id: string;
-    title: string;
-    description: string;
-    date: string;
-    image: string;
-    category: string;
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  category: string;
 }
 
 interface EventItem {
-    id: string;
-    title: string;
-    date: string;
-    location: string;
-    startTime: string;
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  startTime: string;
 }
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    imports: [CommonModule, RouterLink],
-    template: `
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  template: `
     <!-- Hero Section -->
     <section class="relative h-[500px] lg:h-[550px] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       <!-- Background Pattern -->
@@ -253,27 +253,35 @@ interface EventItem {
     </section>
 
     <!-- Formations Section -->
-    <section class="py-20 bg-slate-50 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
       <!-- Background Elements -->
-      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 24px 24px;"></div>
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+      </div>
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
       
       <div class="container mx-auto px-6 lg:px-16 relative z-10">
         <div class="text-center mb-12" data-aos="fade-up">
-          <h2 class="text-3xl font-semibold text-slate-800 mb-3">Nos Formations</h2>
-          <p class="text-gray-500 max-w-2xl mx-auto">Découvrez nos programmes d'excellence en ingénierie</p>
+          <span class="inline-block px-4 py-1.5 bg-blue-500/20 text-blue-300 text-xs font-medium rounded-full mb-4 backdrop-blur-sm border border-blue-400/20">
+            Programmes d'Excellence
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Nos Formations</h2>
+          <p class="text-blue-100/70 max-w-2xl mx-auto">Découvrez nos programmes d'excellence en ingénierie</p>
         </div>
         
         <!-- Tabs -->
         <div class="flex justify-center mb-10" data-aos="fade-up" data-aos-delay="100">
-          <div class="inline-flex bg-gray-100 rounded-full p-1">
+          <div class="inline-flex bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/10">
             <button 
               *ngFor="let tab of tabs"
               (click)="activeTab = tab.id"
               class="px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300"
               [class.bg-white]="activeTab === tab.id"
               [class.text-slate-800]="activeTab === tab.id"
-              [class.shadow-sm]="activeTab === tab.id"
-              [class.text-gray-500]="activeTab !== tab.id"
+              [class.shadow-lg]="activeTab === tab.id"
+              [class.text-white/70]="activeTab !== tab.id"
+              [class.hover:text-white]="activeTab !== tab.id"
             >
               {{ tab.label }}
             </button>
@@ -285,22 +293,21 @@ interface EventItem {
           <a 
             *ngFor="let formation of getActiveFormations(); let i = index"
             [routerLink]="formation.link"
-            class="group bg-white p-6 rounded-2xl border border-gray-100 hover:border-blue-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+            class="group bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-blue-400/50 hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
           >
-            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-50 to-transparent rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-transparent rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:opacity-100 transition-opacity"></div>
             
-            <div class="w-12 h-12 bg-blue-100 group-hover:bg-blue-500 rounded-xl flex items-center justify-center mb-4 transition-colors">
-              <svg class="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-blue-500/30 group-hover:bg-blue-500 rounded-xl flex items-center justify-center mb-4 transition-colors border border-blue-400/30">
+              <svg class="w-6 h-6 text-blue-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-slate-800 group-hover:text-blue-600 transition-colors mb-2">
+            <h3 class="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors mb-2">
               {{ formation.title }}
             </h3>
-            <p class="text-sm text-gray-500 mb-4">{{ formation.subtitle }}</p>
-            <span class="inline-flex items-center gap-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            <p class="text-sm text-white/60 mb-4">{{ formation.subtitle }}</p>
+            <span class="inline-flex items-center gap-1 text-blue-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
               En savoir plus
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -312,23 +319,28 @@ interface EventItem {
     </section>
 
     <!-- Partners Section -->
-    <section class="py-20 bg-white border-t border-gray-100">
+    <section class="py-20 bg-gradient-to-b from-slate-100 to-white relative">
       <div class="container mx-auto px-6 lg:px-16">
-        <div class="text-center mb-10" data-aos="fade-up">
-          <h2 class="text-2xl font-semibold text-slate-800 mb-2">Nos Partenaires</h2>
-          <p class="text-gray-500 text-sm">Entreprises et institutions qui nous font confiance</p>
+        <div class="text-center mb-12" data-aos="fade-up">
+          <span class="inline-block px-4 py-1.5 bg-blue-100 text-blue-600 text-xs font-medium rounded-full mb-4">
+            Ils nous font confiance
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Nos Partenaires</h2>
+          <p class="text-gray-500">Entreprises et institutions qui nous font confiance</p>
         </div>
         
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 lg:gap-20" data-aos="fade-up" data-aos-delay="100">
-          <div 
-            *ngFor="let partner of partners; let i = index" 
-            class="group"
-          >
-            <img 
-              [src]="'/assets/images/' + getPartnerImage(i)" 
-              [alt]="partner"
-              class="h-10 md:h-14 w-auto object-contain group-hover:scale-110 transition-all duration-500"
-            />
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-20">
+            <div 
+              *ngFor="let partner of partners; let i = index" 
+              class="group"
+            >
+              <img 
+                [src]="'/assets/images/' + getPartnerImage(i)" 
+                [alt]="partner"
+                class="h-12 md:h-16 w-auto object-contain group-hover:scale-110 transition-all duration-500"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -438,7 +450,7 @@ interface EventItem {
       </div>
     </section>
   `,
-    styles: [`
+  styles: [`
     .line-clamp-2 {
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -448,178 +460,178 @@ interface EventItem {
   `]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-    // Slider
-    currentSlide = 0;
-    slides: SlideData[] = [
-        { title: 'Bienvenue à l\'ENICarthage', subtitle: 'Former les ingénieurs de demain avec excellence et innovation', backgroundImage: '' },
-        { title: 'Formations d\'Excellence', subtitle: 'Cycles Ingénieurs, Mastères et Doctorat en partenariat avec l\'industrie', backgroundImage: '' },
-        { title: 'Recherche & Innovation', subtitle: 'Laboratoires de pointe et projets de recherche internationaux', backgroundImage: '' },
-        { title: 'Ouverture Internationale', subtitle: 'Partenariats avec les meilleures universités mondiales', backgroundImage: '' }
+  // Slider
+  currentSlide = 0;
+  slides: SlideData[] = [
+    { title: 'Bienvenue à l\'ENICarthage', subtitle: 'Former les ingénieurs de demain avec excellence et innovation', backgroundImage: '' },
+    { title: 'Formations d\'Excellence', subtitle: 'Cycles Ingénieurs, Mastères et Doctorat en partenariat avec l\'industrie', backgroundImage: '' },
+    { title: 'Recherche & Innovation', subtitle: 'Laboratoires de pointe et projets de recherche internationaux', backgroundImage: '' },
+    { title: 'Ouverture Internationale', subtitle: 'Partenariats avec les meilleures universités mondiales', backgroundImage: '' }
+  ];
+  private slideInterval: any;
+
+  // Quick Stats
+  quickStats = [
+    { value: '2500+', label: 'Étudiants' },
+    { value: '150+', label: 'Enseignants' },
+    { value: '8', label: 'Formations' },
+    { value: '20+', label: 'Partenaires' }
+  ];
+
+  // Tabs
+  activeTab = 'formations';
+  tabs = [
+    { id: 'formations', label: 'Formations' },
+    { id: 'recherche', label: 'Recherche' },
+    { id: 'cooperations', label: 'Coopérations' }
+  ];
+
+  // Data
+  featuredNews: NewsItem[] = [];
+  upcomingEvents: EventItem[] = [];
+  formations: any[] = [];
+  recherche: any[] = [];
+  cooperations: any[] = [];
+  partners: string[] = [];
+
+  // Calendar
+  currentMonthName = '';
+  currentYear = 0;
+  todayFormatted = '';
+
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(): void {
+    const now = new Date();
+    this.currentMonthName = now.toLocaleDateString('fr-FR', { month: 'long' });
+    this.currentYear = now.getFullYear();
+    this.todayFormatted = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+
+    this.loadData();
+    this.startSlideshow();
+  }
+
+  ngAfterViewInit(): void {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        once: true,
+        offset: 50
+      });
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
+  }
+
+  private loadData(): void {
+    this.dataService.getHomePage().subscribe((data: any) => {
+      this.formations = data.formations || [];
+      this.recherche = data.recherche || [];
+      this.cooperations = data.cooperations || [];
+      this.partners = data.partners?.map((p: any) => p.name) || [];
+    });
+
+    this.dataService.getNews().subscribe((news: any[]) => {
+      this.featuredNews = news.slice(0, 3);
+    });
+
+    this.dataService.getEvents().subscribe((events: any[]) => {
+      this.upcomingEvents = events.slice(0, 3);
+    });
+  }
+
+  // Slider methods
+  startSlideshow(): void {
+    this.slideInterval = setInterval(() => this.nextSlide(), 5000);
+  }
+
+  nextSlide(): void {
+    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+  }
+
+  prevSlide(): void {
+    this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1;
+  }
+
+  goToSlide(index: number): void {
+    this.currentSlide = index;
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+      this.startSlideshow();
+    }
+  }
+
+  // Get active formations based on tab
+  getActiveFormations(): any[] {
+    switch (this.activeTab) {
+      case 'recherche': return this.recherche;
+      case 'cooperations': return this.cooperations;
+      default: return this.formations.slice(0, 4);
+    }
+  }
+
+  getFormationIcon(): string {
+    switch (this.activeTab) {
+      case 'recherche': return 'FlaskConical';
+      case 'cooperations': return 'Handshake';
+      default: return 'GraduationCap';
+    }
+  }
+
+  // Date formatting
+  formatDate(dateStr: string): string {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  getEventDay(dateStr: string): string {
+    return new Date(dateStr).toLocaleDateString('fr-FR', { weekday: 'short' }).slice(0, 3);
+  }
+
+  getEventDayNum(dateStr: string): string {
+    return new Date(dateStr).getDate().toString().padStart(2, '0');
+  }
+
+  getEventMonth(dateStr: string): string {
+    return new Date(dateStr).toLocaleDateString('fr-FR', { month: 'short' }).slice(0, 3);
+  }
+
+  // Newsletter
+  onNewsletterSubmit(event: Event): void {
+    event.preventDefault();
+    alert('Merci pour votre inscription!');
+  }
+
+  // Image mappings
+  getSlideImage(index: number): string {
+    const slides = ['banner1.jpg', 'banner2.png', 'banner3.jpg', 'banner4.jpg'];
+    return slides[index % slides.length];
+  }
+
+  getNewsImage(index: number): string {
+    const images = [
+      'news-furniture.jpg',
+      'news-electronics.jpg',
+      'news-research-lab.jpg'
     ];
-    private slideInterval: any;
+    return images[index % images.length];
+  }
 
-    // Quick Stats
-    quickStats = [
-        { value: '2500+', label: 'Étudiants' },
-        { value: '150+', label: 'Enseignants' },
-        { value: '8', label: 'Formations' },
-        { value: '20+', label: 'Partenaires' }
+  getPartnerImage(index: number): string {
+    const images = [
+      '7b3d1d0c579522df79c73925f5ee39a6935a0584.jpg',
+      'c7f5bcb9e97167613fe39e45bc5051fc8d8d9e47.jpg',
+      '4650d9e333eb912dfdfa08324cba17d85ce4d30d.jpg',
+      '45aeaa1e639a7646fa49b7316f6c38e7f561aa98.jpg',
+      'd200ab81927042f9f33b655936d83c508c5df538.jpg',
+      '77371d4962181a4ff04cdb34aee9ccfc158ef5ab.jpg',
+      '533e8a071cfcd2fec7690b17657d998b48a2edb0.jpg',
+      '3d0191b149e945ead2c338d021d0da9c9bfc1f96.jpg'
     ];
-
-    // Tabs
-    activeTab = 'formations';
-    tabs = [
-        { id: 'formations', label: 'Formations' },
-        { id: 'recherche', label: 'Recherche' },
-        { id: 'cooperations', label: 'Coopérations' }
-    ];
-
-    // Data
-    featuredNews: NewsItem[] = [];
-    upcomingEvents: EventItem[] = [];
-    formations: any[] = [];
-    recherche: any[] = [];
-    cooperations: any[] = [];
-    partners: string[] = [];
-
-    // Calendar
-    currentMonthName = '';
-    currentYear = 0;
-    todayFormatted = '';
-
-    constructor(private dataService: DataService) { }
-
-    ngOnInit(): void {
-        const now = new Date();
-        this.currentMonthName = now.toLocaleDateString('fr-FR', { month: 'long' });
-        this.currentYear = now.getFullYear();
-        this.todayFormatted = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-
-        this.loadData();
-        this.startSlideshow();
-    }
-
-    ngAfterViewInit(): void {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 600,
-                once: true,
-                offset: 50
-            });
-        }
-    }
-
-    ngOnDestroy(): void {
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-        }
-    }
-
-    private loadData(): void {
-        this.dataService.getHomePage().subscribe((data: any) => {
-            this.formations = data.formations || [];
-            this.recherche = data.recherche || [];
-            this.cooperations = data.cooperations || [];
-            this.partners = data.partners?.map((p: any) => p.name) || [];
-        });
-
-        this.dataService.getNews().subscribe((news: any[]) => {
-            this.featuredNews = news.slice(0, 3);
-        });
-
-        this.dataService.getEvents().subscribe((events: any[]) => {
-            this.upcomingEvents = events.slice(0, 3);
-        });
-    }
-
-    // Slider methods
-    startSlideshow(): void {
-        this.slideInterval = setInterval(() => this.nextSlide(), 5000);
-    }
-
-    nextSlide(): void {
-        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-    }
-
-    prevSlide(): void {
-        this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1;
-    }
-
-    goToSlide(index: number): void {
-        this.currentSlide = index;
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-            this.startSlideshow();
-        }
-    }
-
-    // Get active formations based on tab
-    getActiveFormations(): any[] {
-        switch (this.activeTab) {
-            case 'recherche': return this.recherche;
-            case 'cooperations': return this.cooperations;
-            default: return this.formations.slice(0, 4);
-        }
-    }
-
-    getFormationIcon(): string {
-        switch (this.activeTab) {
-            case 'recherche': return 'FlaskConical';
-            case 'cooperations': return 'Handshake';
-            default: return 'GraduationCap';
-        }
-    }
-
-    // Date formatting
-    formatDate(dateStr: string): string {
-        const date = new Date(dateStr);
-        return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
-    }
-
-    getEventDay(dateStr: string): string {
-        return new Date(dateStr).toLocaleDateString('fr-FR', { weekday: 'short' }).slice(0, 3);
-    }
-
-    getEventDayNum(dateStr: string): string {
-        return new Date(dateStr).getDate().toString().padStart(2, '0');
-    }
-
-    getEventMonth(dateStr: string): string {
-        return new Date(dateStr).toLocaleDateString('fr-FR', { month: 'short' }).slice(0, 3);
-    }
-
-    // Newsletter
-    onNewsletterSubmit(event: Event): void {
-        event.preventDefault();
-        alert('Merci pour votre inscription!');
-    }
-
-    // Image mappings
-    getSlideImage(index: number): string {
-        const slides = ['banner1.jpg', 'banner2.png', 'banner3.jpg', 'banner4.jpg'];
-        return slides[index % slides.length];
-    }
-
-    getNewsImage(index: number): string {
-        const images = [
-            'news-furniture.jpg',
-            'news-electronics.jpg',
-            'news-research-lab.jpg'
-        ];
-        return images[index % images.length];
-    }
-
-    getPartnerImage(index: number): string {
-        const images = [
-            '7b3d1d0c579522df79c73925f5ee39a6935a0584.jpg',
-            'c7f5bcb9e97167613fe39e45bc5051fc8d8d9e47.jpg',
-            '4650d9e333eb912dfdfa08324cba17d85ce4d30d.jpg',
-            '45aeaa1e639a7646fa49b7316f6c38e7f561aa98.jpg',
-            'd200ab81927042f9f33b655936d83c508c5df538.jpg',
-            '77371d4962181a4ff04cdb34aee9ccfc158ef5ab.jpg',
-            '533e8a071cfcd2fec7690b17657d998b48a2edb0.jpg',
-            '3d0191b149e945ead2c338d021d0da9c9bfc1f96.jpg'
-        ];
-        return images[index % images.length];
-    }
+    return images[index % images.length];
+  }
 }
