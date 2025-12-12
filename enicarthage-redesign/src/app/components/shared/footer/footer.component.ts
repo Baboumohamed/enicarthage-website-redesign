@@ -28,8 +28,6 @@ import { RouterLink } from '@angular/router';
               <li><a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Organigramme</a></li>
               <li><a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Équipe enseignante</a></li>
               <li><a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Clubs de l'école</a></li>
-              <li class="text-sm font-medium text-white mt-4">Actualités</li>
-              <li class="text-sm font-medium text-white">Contact</li>
             </ul>
           </div>
 
@@ -68,8 +66,6 @@ import { RouterLink } from '@angular/router';
               <li><a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Bourses</a></li>
               <li><a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Coopérations</a></li>
               <li><a routerLink="/services" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Centre 4C</a></li>
-              <li class="text-sm font-medium text-white mt-4">Agenda</li>
-              <li class="text-sm font-medium text-white">Contact</li>
             </ul>
           </div>
 
