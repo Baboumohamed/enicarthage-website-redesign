@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
     <!-- Top Bar -->
-    <div class="bg-slate-800 text-white text-sm hidden lg:block">
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-sm hidden lg:block">
       <div class="container mx-auto px-6 lg:px-16">
         <div class="flex items-center justify-between h-10">
           <!-- Left Links -->

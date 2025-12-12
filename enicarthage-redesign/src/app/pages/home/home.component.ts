@@ -130,121 +130,175 @@ interface EventItem {
     </section>
 
     <!-- Main Content: News + Agenda -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div class="container mx-auto px-6 lg:px-16">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        
+        <!-- Apple-style centered header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">À la une</h2>
+          <p class="text-xl text-gray-500">Dernières actualités de l'école</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] gap-6 lg:gap-8">
           
-          <!-- News Section (2 columns) -->
-          <div class="lg:col-span-2">
-            <div class="flex items-center justify-between mb-8">
-              <div>
-                <h2 class="text-2xl font-semibold text-slate-800">À la une</h2>
-                <p class="text-gray-500 text-sm mt-1">Dernières actualités de l'école</p>
-              </div>
-              <a routerLink="/news" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 group">
-                Voir tout
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
+          <!-- News Section -->
+          <div>
             
-            <div class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <article 
                 *ngFor="let news of featuredNews; let i = index" 
-                class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group"
+                class="group cursor-pointer"
                 data-aos="fade-up"
                 [attr.data-aos-delay]="i * 100"
               >
-                <div class="flex flex-col sm:flex-row">
-                  <div class="sm:w-48 h-40 sm:h-auto overflow-hidden flex-shrink-0">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                  <!-- Image Container with Gradient Overlay -->
+                  <div class="relative h-48 overflow-hidden">
                     <img 
                       [src]="'/assets/images/' + getNewsImage(i)" 
                       [alt]="news.title"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                  </div>
-                  <div class="flex-1 p-5">
-                    <div class="flex items-center gap-3 mb-3">
-                      <span class="px-2.5 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">{{ news.category }}</span>
-                      <span class="text-gray-400 text-xs flex items-center gap-1">
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        {{ formatDate(news.date) }}
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                      <span class="px-3 py-1.5 bg-white/95 backdrop-blur-sm text-blue-600 text-xs font-semibold rounded-full shadow-sm">
+                        {{ news.category }}
                       </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2">
+                  </div>
+                  
+                  <!-- Content -->
+                  <div class="p-6">
+                    <div class="flex items-center gap-2 text-gray-400 text-sm mb-3">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      {{ formatDate(news.date) }}
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3 line-clamp-2">
                       {{ news.title }}
                     </h3>
-                    <p class="text-gray-500 text-sm line-clamp-2 mb-4">{{ news.description }}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-4">{{ news.description }}</p>
                     <a 
                       [routerLink]="['/news', news.id]" 
-                      class="inline-flex items-center gap-1 text-blue-600 text-sm font-medium hover:gap-2 transition-all"
+                      class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-3 transition-all"
                     >
-                      Lire la suite
+                      Lire l'article
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                       </svg>
                     </a>
                   </div>
                 </div>
               </article>
             </div>
+            
+            <!-- View All Button -->
+            <div class="text-center mt-10">
+              <a 
+                routerLink="/news" 
+                class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-medium rounded-full hover:bg-slate-800 transition-all hover:scale-105 hover:shadow-xl"
+              >
+                Voir toutes les actualités
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Smart Divider between News and Agenda -->
+          <div class="hidden lg:flex flex-col items-center justify-center py-10">
+            <!-- Top dot -->
+            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg shadow-blue-500/30"></div>
+            <!-- Gradient line -->
+            <div class="w-px flex-1 bg-gradient-to-b from-blue-400 via-blue-200 to-transparent my-2"></div>
+            <!-- Center circle with icon -->
+            <div class="w-10 h-10 rounded-full bg-white border-2 border-blue-100 flex items-center justify-center shadow-lg">
+              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <!-- Gradient line -->
+            <div class="w-px flex-1 bg-gradient-to-b from-transparent via-blue-200 to-blue-400 my-2"></div>
+            <!-- Bottom dot -->
+            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg shadow-blue-500/30"></div>
           </div>
 
           <!-- Agenda Sidebar -->
-          <div class="lg:col-span-1">
-            <div class="bg-white rounded-2xl shadow-sm p-6 sticky top-24">
-              <div class="flex items-center justify-between mb-6">
-                <h2 class="text-xl font-semibold text-slate-800">Agenda</h2>
-                <a routerLink="/events" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
-                  Voir tout
-                </a>
+          <div>
+            <div class="space-y-5">
+              <!-- Calendar Date Card - Dynamic with animations -->
+              <div 
+                class="group bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 cursor-pointer hover:scale-[1.02]"
+                data-aos="fade-left"
+              >
+                <div class="text-center py-10 px-6 relative">
+                  <!-- Animated background pattern -->
+                  <div class="absolute inset-0 opacity-10">
+                    <div class="absolute inset-0 animate-pulse" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+                  </div>
+                  <!-- Animated glow orbs -->
+                  <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
+                  <div class="absolute bottom-0 left-0 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse" style="animation-delay: 0.5s;"></div>
+                  
+                  <div class="relative z-10">
+                    <p class="text-blue-300 text-xs uppercase tracking-widest mb-2 group-hover:text-blue-200 transition-colors">{{ currentMonthName }}</p>
+                    <p class="text-7xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">{{ currentDayOfMonth }}</p>
+                    <p class="text-blue-200/60 text-sm group-hover:text-blue-200/80 transition-colors">{{ todayFormatted }}</p>
+                  </div>
+                  
+                  <!-- Hover indicator -->
+                  <div class="absolute bottom-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-blue-300 text-xs">Voir l'agenda</span>
+                  </div>
+                </div>
               </div>
               
-              <!-- Mini Calendar -->
-              <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-5 mb-6 text-center text-white">
-                <p class="text-blue-200 text-sm uppercase tracking-wide">{{ currentMonthName }}</p>
-                <p class="text-4xl font-bold my-1">{{ currentYear }}</p>
-                <p class="text-blue-200 text-xs">{{ todayFormatted }}</p>
-              </div>
-
-              <!-- Events List -->
-              <div class="space-y-4">
-                <div 
-                  *ngFor="let event of upcomingEvents; let i = index" 
-                  class="flex gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group"
-                  data-aos="fade-left"
-                  [attr.data-aos-delay]="i * 50"
-                >
-                  <div class="flex-shrink-0 w-14 text-center">
-                    <div class="bg-blue-50 group-hover:bg-blue-100 rounded-xl p-2 transition-colors">
-                      <p class="text-xs text-blue-600 uppercase font-medium">{{ getEventDay(event.date) }}</p>
-                      <p class="text-xl font-bold text-blue-700">{{ getEventDayNum(event.date) }}</p>
-                      <p class="text-xs text-blue-500">{{ getEventMonth(event.date) }}</p>
-                    </div>
+              <!-- All Events - Dynamic cards -->
+              <div 
+                *ngFor="let event of upcomingEvents; let i = index" 
+                class="group cursor-pointer transform-gpu"
+                data-aos="fade-left"
+                [attr.data-aos-delay]="(i + 1) * 80"
+              >
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] border border-gray-100 hover:border-blue-200 p-5 flex items-center gap-4">
+                  <!-- Date Badge - Animated -->
+                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex flex-col items-center justify-center group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-300 border border-blue-100 group-hover:border-blue-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+                    <span class="text-xl font-bold text-blue-600 group-hover:text-white transition-colors duration-300">{{ getEventDayNum(event.date) }}</span>
+                    <span class="text-[10px] uppercase tracking-wide text-blue-400 group-hover:text-white/80 transition-colors duration-300">{{ getEventMonth(event.date) }}</span>
                   </div>
+                  
+                  <!-- Content -->
                   <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-2">
+                    <h4 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2 mb-1">
                       {{ event.title }}
                     </h4>
-                    <p class="text-xs text-gray-400 mt-1 flex items-center gap-1">
-                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg>
-                      {{ event.location }}
-                    </p>
-                    <p class="text-xs text-gray-400 mt-0.5 flex items-center gap-1">
-                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <p class="text-xs text-gray-400 flex items-center gap-1 group-hover:text-gray-500 transition-colors">
+                      <svg class="w-3 h-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
                       {{ event.startTime }}
                     </p>
                   </div>
+                  
+                  <!-- Arrow - Animated -->
+                  <svg class="w-5 h-5 text-gray-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
                 </div>
               </div>
+              
+              <!-- View All Button - Dynamic -->
+              <a 
+                routerLink="/events" 
+                class="group flex items-center justify-center gap-2 py-4 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-all"
+              >
+                <span>Voir tous les événements</span>
+                <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -347,105 +401,38 @@ interface EventItem {
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-700">
-      <div class="container mx-auto px-6 lg:px-16">
+    <section class="py-20 bg-slate-900 relative overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+      </div>
+      <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+      
+      <div class="container mx-auto px-6 lg:px-16 relative z-10">
         <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
-          <svg class="w-12 h-12 text-white/80 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-          </svg>
-          <h2 class="text-2xl md:text-3xl font-semibold text-white mb-3">Restez informé</h2>
-          <p class="text-blue-100 mb-8">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités</p>
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/25">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Restez informé</h2>
+          <p class="text-gray-400 mb-8">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités</p>
           
           <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" (submit)="onNewsletterSubmit($event)">
             <input 
               type="email" 
               placeholder="Votre adresse email"
-              class="flex-1 px-5 py-3.5 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/50 focus:outline-none focus:border-white/40 backdrop-blur-sm"
+              class="flex-1 px-5 py-3.5 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 backdrop-blur-sm transition-colors"
               required
             >
             <button 
               type="submit"
-              class="px-8 py-3.5 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+              class="px-8 py-3.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-lg shadow-blue-500/25"
             >
               S'abonner
             </button>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact CTA Section -->
-    <section class="py-20 bg-slate-900">
-      <div class="container mx-auto px-6 lg:px-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div data-aos="fade-right">
-            <h2 class="text-3xl font-semibold text-white mb-4">Besoin d'informations ?</h2>
-            <p class="text-gray-400 mb-6 leading-relaxed">
-              Notre équipe est à votre disposition pour répondre à toutes vos questions concernant nos formations, 
-              les inscriptions ou la vie à l'ENICarthage.
-            </p>
-            <div class="space-y-4">
-              <div class="flex items-center gap-4 text-gray-300">
-                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                </div>
-                <span>45 Rue des Entrepreneurs, Charguia II, Tunis</span>
-              </div>
-              <div class="flex items-center gap-4 text-gray-300">
-                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                  </svg>
-                </div>
-                <span>(+216) 71 940 699</span>
-              </div>
-              <div class="flex items-center gap-4 text-gray-300">
-                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                  <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                  </svg>
-                </div>
-                <span>contact&#64;enicarthage.rnu.tn</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10" data-aos="fade-left">
-            <h3 class="text-xl font-semibold text-white mb-6">Envoyez-nous un message</h3>
-            <form class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input 
-                  type="text" 
-                  placeholder="Nom"
-                  class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-                >
-                <input 
-                  type="email" 
-                  placeholder="Email"
-                  class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-                >
-              </div>
-              <input 
-                type="text" 
-                placeholder="Sujet"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-              >
-              <textarea 
-                placeholder="Votre message"
-                rows="4"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-              ></textarea>
-              <button 
-                type="submit"
-                class="w-full px-6 py-3.5 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors"
-              >
-                Envoyer le message
-              </button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
@@ -498,6 +485,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   currentMonthName = '';
   currentYear = 0;
   todayFormatted = '';
+  currentDayOfMonth = '';
 
   constructor(private dataService: DataService) { }
 
@@ -506,6 +494,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.currentMonthName = now.toLocaleDateString('fr-FR', { month: 'long' });
     this.currentYear = now.getFullYear();
     this.todayFormatted = now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+    this.currentDayOfMonth = now.getDate().toString().padStart(2, '0');
 
     this.loadData();
     this.startSlideshow();
